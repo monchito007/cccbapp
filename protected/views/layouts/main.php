@@ -54,6 +54,7 @@
 				//array('label'=>'FormTest', 'url'=>array('/formtest/index')),
 				//array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Invite', 'url'=>array('/inviteFriend/create')),
 				//array('label'=>'Registration', 'url'=>array('/registration/registration')),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),

@@ -54,7 +54,7 @@ class InviteFriend extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'mail' => 'Mail',
+			'mail' => 'E-mail',
 		);
 	}
 

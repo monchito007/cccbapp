@@ -10,9 +10,12 @@
             <file>file:/var/www/html/cccbapp/protected/controllers/SaludoController.php</file>
             <file>file:/var/www/html/cccbapp/protected/views/event/index.php</file>
             <file>file:/var/www/html/cccbapp/protected/controllers/EventController.php</file>
+            <file>file:/var/www/html/cccbapp/protected/views/site/contact.php</file>
             <file>file:/var/www/html/cccbapp/protected/views/event/_view.php</file>
             <file>file:/var/www/html/cccbapp/protected/views/inviteFriend/_form.php</file>
             <file>file:/var/www/html/cccbapp/protected/models/Event.php</file>
+            <file>file:/var/www/html/cccbapp/protected/modules/user/views/user/_form.php</file>
+            <file>file:/var/www/html/cccbapp/protected/views/event/create.php</file>
             <file>file:/var/www/html/cccbapp/protected/views/event/_form.php</file>
             <file>file:/var/www/html/cccbapp/protected/views/layouts/main.php</file>
             <file>file:/var/www/html/cccbapp/protected/views/inviteFriend/create.php</file>
@@ -20,6 +23,7 @@
             <file>file:/var/www/html/cccbapp/protected/views/site/index.php</file>
             <file>file:/var/www/html/cccbapp/protected/config/main.php</file>
             <file>file:/var/www/html/cccbapp/protected/extensions/mailer/EMailer.php</file>
+            <file>file:/var/www/html/cccbapp/protected/yiic.php</file>
             <file>file:/var/www/html/cccbapp/protected/views/saludo/index.php</file>
             <file>file:/var/www/html/cccbapp/protected/extensions/mailer/phpmailer/class.smtp.php</file>
         </group>

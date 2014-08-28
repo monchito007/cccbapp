@@ -12,10 +12,10 @@ $this->pageTitle=Yii::app()->name;
 <br><br>Here is the form by means of which you can offer your information about public space. As you can see, it has been prepared with a great variety of issues in mind. However, if you find it still lacks nuances, please let us know here or in the Contact section.</p>
 
 <ul>
-    <li>If you are new register click <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=registration/registration'); ?></li>
-    <li>If you already have an account login click <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=registration/registration'); ?></li>
-    <li>Colaborate in creating this project and contact click <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=site/contact'); ?></li>
-    <li>Create an event click <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=event/create'); ?></li>
-    <li>Check the event list click <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=event/index'); ?></li>
-    <li>If you want invite a friend click <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=inviteFriend/create'); ?></li>
+    <li>If you are new, register <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=registration/registration'); ?>.</li>
+    <li>If you already have an account login <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=registration/registration'); ?>.</li>
+    <li>Colaborate in creating this project and contact <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=site/contact'); ?>.</li>
+    <li>To create an event click <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=event/create'); ?>.</li>
+    <li>To check the event list click <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=event/index'); ?>.</li>
+    <li>If you want invite somebody click <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=inviteFriend/create'); ?>.</li>
 </ul>

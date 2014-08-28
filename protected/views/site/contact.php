@@ -20,8 +20,12 @@ $this->breadcrumbs=array(
 <?php else: ?>
 
 <p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+This space is fundamental. We invite you to join in the process of transforming this tool. If you have any idea or suggestions about any of the spaces on this page, or any part of them, please don’t hesitate to let us know. We are hoping to receive proposals that will help us as we continue to construct this app. 
+<br>
+<br>
+Thank you.
 </p>
+
 
 <div class="form">
 

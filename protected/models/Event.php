@@ -42,7 +42,7 @@ class Event extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			//array('title, description, date, address, url, involved_user_id, involvement_mode_id, event_type_id, location, category_list_json, public_space_type_list_json, suggestion_public_space, promotor_list_json, discipline, denounce_conflicts_list_json, suggestion_denounce_conflict, creator_username', 'required'),
-			array('title, description, date, address, url, event_type_id, location, promotor_id', 'required'),
+			array('title, date, event_type_id, location, related_event_list_json', 'required'),
 			array('id, event_type_id', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>100),
 			array('description', 'length', 'max'=>250),
@@ -89,7 +89,7 @@ class Event extends CActiveRecord
 			'description' => 'Description',
 			'date' => 'Date',
 			'address' => 'Direction',
-			'url' => 'Url',
+			'url' => 'Link',
 			'event_type_id' => 'Event Type',
 			'location' => 'Location',
 			'related_event_list_json' => 'This event is related with...',

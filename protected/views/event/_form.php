@@ -15,6 +15,14 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
+        <p>
+            This form has been designed bearing in mind the people who have started to create this tool. 
+            Yet it is something that needs to be in permanent transformation. 
+            And this is a process that should be undertaken collectively. 
+            We are therefore looking forward to receiving any proposal that might add a category to it, or remove one, or enrich one with more sub-categories. 
+            Please contribute any ideas you may have <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=site/contact'); ?>.
+        </p>
+    
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
@@ -27,7 +35,7 @@
         
         <div class="row">
 		<?php echo $form->labelEx($model,'url'); ?>
-		<?php echo $form->textField($model,'url',array('size'=>60,'maxlength'=>250,'placeholder'=>'Link the event!')); ?>
+		<?php echo $form->textField($model,'url',array('size'=>60,'maxlength'=>250,'placeholder'=>'Tip an URL')); ?>
 		<?php echo $form->error($model,'url'); ?>
 	</div>
         
@@ -74,7 +82,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'related_event_list_json'); ?>
                 <?php echo $form->ListBox($model,'related_event_list_json', RelatedEvents::getRelatedEvents(),array('multiple' => 'multiple')); ?>
-		<i>(press control to choose more than one)</i>
+		<i>(hold Ctrl and click the options you want to select)</i>
                 <?php echo $form->error($model,'related_event_list_json'); ?>
 	</div>
         
