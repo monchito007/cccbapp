@@ -81,7 +81,7 @@ class InviteFriendController extends Controller
                         Yii::app()->mailer->From = $mail;
                         Yii::app()->mailer->FromName = 'Wei';
                         Yii::app()->mailer->AddReplyTo('wei@pradosoft.com');
-                        Yii::app()->mailer->AddAddress('monchito007@gmail.com');
+                        Yii::app()->mailer->AddAddress('publicspaceapp@gmail.com');
                         Yii::app()->mailer->Subject = 'Yii rulez!';
                         Yii::app()->mailer->Body = $message;
                         Yii::app()->mailer->Send();
@@ -89,7 +89,7 @@ class InviteFriendController extends Controller
                         
                         $message = 'Hello World!';
                         $mail=Yii::app()->Smtpmail;
-                        $mail->SetFrom('monchito007@gmail.com', 'From NAme');
+                        $mail->SetFrom('publicspaceapp@gmail.com', 'From NAme');
                         $mail->Subject = $email;
                         $mail->MsgHTML($message);
                         $mail->AddAddress($email, "");

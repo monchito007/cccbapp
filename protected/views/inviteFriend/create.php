@@ -3,7 +3,7 @@
 /* @var $model InviteFriend */
 
 $this->breadcrumbs=array(
-	'Invite Friends'=>array('create'),
+	'Invite somebody'=>array('create'),
 	
 );
 /*
@@ -14,6 +14,6 @@ $this->menu=array(
 */
 ?>
 
-<h1>Invite a friend</h1>
+<h1>Invite somebody</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

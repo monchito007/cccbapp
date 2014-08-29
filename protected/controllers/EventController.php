@@ -101,6 +101,8 @@ class EventController extends Controller
 		{
 			$model->attributes=$_POST['Event'];
                         
+                        //print_r($model->attributes);
+                        
                         //Convert array of related event to JSON.
                         $model->related_event_list_json = json_encode($model->related_event_list_json);
                         
@@ -109,6 +111,8 @@ class EventController extends Controller
                         
                         //Add id of user who created the event.
                         $model->creator_username = Yii::app()->user->name;
+                        
+                        //phpinfo();
                         
                         if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -241,6 +245,7 @@ class EventController extends Controller
                 }
                 
             }
+            
             
             //remove first comma
             $related_events_list_string = substr($related_events_list_string, 2, strlen($related_events_list_string));

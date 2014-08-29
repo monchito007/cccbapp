@@ -52,7 +52,13 @@
 	<?php //echo CHtml::encode($this->getCategoriesString($data->id)); ?>
 	
         <b><?php echo CHtml::encode($data->getAttributeLabel('promotor_id')); ?>:</b>
-	<?php echo CHtml::encode($data->Promotor->promotor); ?>
+	<?php 
+            //If promotor_id is different to 0, show the value.
+            if($data->promotor_id){
+                echo CHtml::encode($data->Promotor->promotor);
+            }
+        ?>
+	<?php //echo CHtml::encode($data->Promotor->promotor); ?>
 	<br />
         
 	<b><?php echo CHtml::encode($data->getAttributeLabel('discipline')); ?>:</b>

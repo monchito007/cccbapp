@@ -100,7 +100,7 @@ return array(
                 'Smtpmail'=>array(
                     'class'=>'application.extensions.smtpmail.PHPMailer',
                     'Host'=>"smtp.gmail.com",
-                    'Username'=>'monchito007@gmail.com',
+                    'Username'=>'publicspaceapp@gmail.com',
                     'Password'=>'iddqdidkfa',
                     'Mailer'=>'smtp',
                     'Port'=>465,
@@ -113,7 +113,7 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'monchito007@gmail.com',
+		'adminEmail'=>'publicspaceapp@gmail.com',
 	),
         'modules' => array(
                 'gii'=>array(

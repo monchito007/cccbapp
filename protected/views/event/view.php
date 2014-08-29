@@ -22,7 +22,13 @@ $this->menu=array(
 <?php 
 //Replace id values for its relational value.
 $model->event_type_id = $model->Event_type->event_type;
-$model->promotor_id = $model->Promotor->promotor;
+//$model->promotor_id = $model->Promotor->promotor;
+//If promotor_id is different to 0, show the value.
+if($model->promotor_id){
+    $model->promotor_id = $model->Promotor->promotor;
+}else{
+    $model->promotor_id = "No promotor";
+}
 ?>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
