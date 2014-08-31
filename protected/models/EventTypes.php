@@ -49,7 +49,7 @@ class EventTypes extends CActiveRecord
 	 */
         public static function getEventTypes($key=null){
             
-            $data = EventTypes::model()->findAll();
+            $data = EventTypes::model()->findAll(array('order'=>'event_type'));
             
             //$return=array(''=>'Select...');
             $return=array(''=>'What kind of event is it?');

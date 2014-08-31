@@ -17,7 +17,7 @@ $this->menu=array(
 */
 ?>
 
-<h1>View Event #<?php echo $model->id; ?></h1>
+<h1>View Event</h1>
 
 <?php 
 //Replace id values for its relational value.
@@ -34,7 +34,7 @@ if($model->promotor_id){
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
+		//'id',
 		'title',
                 'url',
                 'event_type_id',

@@ -41,7 +41,7 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
         'sortableAttributes'=>array(
-            'id',
+            //'id',
             'title',
             'url',
             'event_type_id',
@@ -49,7 +49,7 @@ $('.search-form form').submit(function(){
             'description',
             'location',
             'address',
-            'related_event_list_json',
+            //'related_event_list_json',
             'suggest_another_event_related',
             'promotor_id',
             'discipline',

@@ -53,7 +53,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>250,'placeholder'=>'Descrive event')); ?>
+		<?php echo $form->textArea($model,'description',array('rows' => 6, 'cols' => 50,'maxlength'=>250,'placeholder'=>'Descrive event')); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
@@ -94,7 +94,7 @@
         
         <div class="row">
 		<?php echo $form->labelEx($model,'promotor_id'); ?>
-		<?php echo $form->dropDownList($model,'promotor_id',  Promotors::getPromotors()); ?>
+		<?php echo $form->dropDownList($model,'promotor_id', Promotors::getPromotors()); ?>
 		<?php echo $form->error($model,'promotor_id'); ?>
 	</div>
         
@@ -136,6 +136,10 @@
 
 
 $(document).ready(function () {
+    
+    //Get current path
+    //var pathname = window.location.pathname;
+    //alert(pathname);
     
     //Jquery  Calendar for Date field (DateTimePicker)
     //$('#Event_date').datetimepicker();

@@ -12,8 +12,8 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+		<?php //echo $form->label($model,'id'); ?>
+		<?php //echo $form->textField($model,'id'); ?>
 	</div>
 
 	<div class="row">
@@ -60,8 +60,8 @@
         
     
         <div class="row">
-		<?php echo $form->label($model,'related_event_list_json'); ?>
-		<?php echo $form->textField($model,'related_event_list_json', RelatedEvents::getRelatedEventsSearchForm()); ?>
+		<?php //echo $form->label($model,'related_event_list_json'); ?>
+		<?php //echo $form->dropDownList($model,'related_event_list_json', RelatedEvents::getRelatedEventsSearchForm()); ?>
 	</div>
     
         <div class="row">
@@ -71,7 +71,7 @@
     
         <div class="row">
 		<?php echo $form->label($model,'promotor_id'); ?>
-		<?php echo $form->textField($model,'promotor_id',  Promotors::getPromotors()); ?>
+		<?php echo $form->dropDownList($model,'promotor_id', Promotors::getPromotors()); ?>
 	</div>
     
         <div class="row">

@@ -74,12 +74,12 @@ class EventController extends Controller
                 
                 $dateparts = explode("/", $date);
                 
-                $day=$dateparts[0];
-                $month=$dateparts[1];
+                $month=$dateparts[0];
+                $day=$dateparts[1];
                 $year=$dateparts[2];
 
                 $datetime = $year."-".$month."-".$day." ".$time;
-            
+                
             }
             
             return $datetime;
@@ -101,7 +101,7 @@ class EventController extends Controller
 		{
 			$model->attributes=$_POST['Event'];
                         
-                        //print_r($model->attributes);
+                        //phpinfo();
                         
                         //Convert array of related event to JSON.
                         $model->related_event_list_json = json_encode($model->related_event_list_json);
@@ -112,10 +112,12 @@ class EventController extends Controller
                         //Add id of user who created the event.
                         $model->creator_username = Yii::app()->user->name;
                         
-                        //phpinfo();
+                        //promotor_id not take the value ?¿?¿?¿?
+                        $model->promotor_id = $_POST['Event']['promotor_id'];
                         
                         if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
+                        
 		}
 
 		$this->render('create',array(
@@ -235,17 +237,19 @@ class EventController extends Controller
             $related_events_list = json_decode($model->related_event_list_json);
             $related_events_list_string = "";
             
+            if(count($related_events_list)>0){
             
-            foreach ($related_events_list as $related_events_id) {
-                
-                foreach ($model_related_events as $key => $value) {
+                foreach ($related_events_list as $related_events_id) {
 
-                    if($related_events_id==$value['id']){$related_events_list_string = $related_events_list_string.', '.$value['related_event'];}
+                    foreach ($model_related_events as $key => $value) {
+
+                        if($related_events_id==$value['id']){$related_events_list_string = $related_events_list_string.', '.$value['related_event'];}
+
+                    }
 
                 }
                 
             }
-            
             
             //remove first comma
             $related_events_list_string = substr($related_events_list_string, 2, strlen($related_events_list_string));

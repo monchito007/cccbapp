@@ -50,7 +50,7 @@ class RelatedEvents extends CActiveRecord
 	 */
         public static function getRelatedEvents($key=null){
             
-            $data = RelatedEvents::model()->findAll();
+            $data = RelatedEvents::model()->findAll(array('order'=>'related_event'));
             
             $return=array();
             //$return=array(''=>'Select...');
@@ -69,7 +69,7 @@ class RelatedEvents extends CActiveRecord
 	 */
         public static function getRelatedEventsSearchForm($key=null){
             
-            $data = RelatedEvents::model()->findAll();
+            $data = RelatedEvents::model()->findAll(array('order'=>'related_event'));
             
             //$return=array();
             $return=array(''=>'Select...');

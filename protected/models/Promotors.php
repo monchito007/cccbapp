@@ -49,7 +49,7 @@ class Promotors extends CActiveRecord
 	 */
         public static function getPromotors($key=null){
             
-            $data = Promotors::model()->findAll();
+            $data = Promotors::model()->findAll(array('order'=>'promotor'));
             
             //$return=array();
             $return=array(''=>'Select...');
