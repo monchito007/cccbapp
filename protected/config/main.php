@@ -20,7 +20,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-                'application.modules.user.models.*',
+                'application.modules.user.models.*',                
 	),
         /*
 	'modules'=>array(
@@ -92,21 +92,17 @@ return array(
 			),
 		),
                 'cache' => array('class' => 'system.caching.CDummyCache'),
-                'mailer' => array(
-                    'class' => 'application.extensions.mailer.EMailer',
-                    'pathViews' => 'application.views.email',
-                    'pathLayouts' => 'application.views.email.layouts'
-                ),
                 'Smtpmail'=>array(
                     'class'=>'application.extensions.smtpmail.PHPMailer',
                     'Host'=>"smtp.gmail.com",
                     'Username'=>'publicspaceapp@gmail.com',
-                    'Password'=>'iddqdidkfa',
+                    'Password'=>'publicspaceapp2014',
                     'Mailer'=>'smtp',
                     'Port'=>465,
                     'SMTPAuth'=>true,
                     'SMTPSecure' => 'ssl',
                 ),
+                
 	),
 
 	// application-level parameters that can be accessed

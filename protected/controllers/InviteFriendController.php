@@ -73,23 +73,14 @@ class InviteFriendController extends Controller
                         
                         //Get direction email
                         $email = $model->mail;
-                        /*
-                        //Send email
-                        $message = 'Hello World!';
-                        Yii::app()->mailer->Host = 'smtp.gmail.com';
-                        Yii::app()->mailer->IsSMTP();
-                        Yii::app()->mailer->From = $mail;
-                        Yii::app()->mailer->FromName = 'Wei';
-                        Yii::app()->mailer->AddReplyTo('wei@pradosoft.com');
-                        Yii::app()->mailer->AddAddress('publicspaceapp@gmail.com');
-                        Yii::app()->mailer->Subject = 'Yii rulez!';
-                        Yii::app()->mailer->Body = $message;
-                        Yii::app()->mailer->Send();
-                        */
                         
-                        $message = 'Hello World!';
+                        $message = "You have received an invitation to test the new application of Public Space, PublicSpaceApp. "
+                                 . "You can access from the following link: "
+                                 . "<br><br><a href='http://54.187.0.176/cccbapp/' target='_BLANK' >PublicSpaceApp</a>."
+                                 . "<br><br>Thanks for the interest!"
+                                 . "<br><br><b>PublicSpaceApp Team.</b>";
                         $mail=Yii::app()->Smtpmail;
-                        $mail->SetFrom('publicspaceapp@gmail.com', 'From NAme');
+                        $mail->SetFrom('publicspaceapp@gmail.com', 'Welcome to PublicSpaceApp!');
                         $mail->Subject = $email;
                         $mail->MsgHTML($message);
                         $mail->AddAddress($email, "");

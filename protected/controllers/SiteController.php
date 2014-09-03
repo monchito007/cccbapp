@@ -57,7 +57,9 @@ class SiteController extends Controller
 		{
 			$model->attributes=$_POST['ContactForm'];
 			if($model->validate())
-			{
+			{       
+                                
+                                /*
 				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
 				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
 				$headers="From: $name <{$model->email}>\r\n".
@@ -66,6 +68,26 @@ class SiteController extends Controller
 					"Content-Type: text/plain; charset=UTF-8";
 
 				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
+                                */
+                                
+                              
+                                $from = 'publicspaceapp@gmail.com';
+                                
+                                $message = $model->body;
+                                $mail=Yii::app()->Smtpmail;
+                                $mail->SetFrom($model->email, 'Contact E-mail from PublicSpaceApp! ('.$model->name.')');
+                                $mail->Subject = $from;
+                                $mail->MsgHTML("<h1>".$model->name."</h1>"
+                                             . "<h2>".$model->subject."</h2>"
+                                             . "".$message);
+                                $mail->AddAddress($from, '');
+                                
+                                if(!$mail->Send()) {
+                                    echo "Mailer Error: " . $mail->ErrorInfo;
+                                }else {
+                                    echo "Message sent!";
+                                }
+                                
 				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
 				$this->refresh();
 			}
