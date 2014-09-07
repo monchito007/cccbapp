@@ -65,37 +65,38 @@ class InviteFriendController extends Controller
 		$model=new InviteFriend;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['InviteFriend']))
 		{
 			$model->attributes=$_POST['InviteFriend'];
                         
-                        //Get direction email
-                        $email = $model->mail;
+                        if($model->validate()){
                         
-                        $message = "You have received an invitation to test the new application of Public Space, PublicSpaceApp. "
-                                 . "You can access from the following link: "
-                                 . "<br><br><a href='http://54.187.0.176/cccbapp/' target='_BLANK' >PublicSpaceApp</a>."
-                                 . "<br><br>Thanks for the interest!"
-                                 . "<br><br><b>PublicSpaceApp Team.</b>";
-                        $mail=Yii::app()->Smtpmail;
-                        $mail->SetFrom('publicspaceapp@gmail.com', 'Welcome to PublicSpaceApp!');
-                        $mail->Subject = $email;
-                        $mail->MsgHTML($message);
-                        $mail->AddAddress($email, "");
-                        if(!$mail->Send()) {
-                            echo "Mailer Error: " . $mail->ErrorInfo;
-                        }else {
-                            echo "Message sent!";
+                            //Get direction email
+                            $email = $model->mail;
+
+                            $message = "You have received an invitation to test the new application of Public Space, PublicSpaceApp. "
+                                     . "You can access from the following link: "
+                                     . "<br><br><a href='http://54.187.0.176/cccbapp/' target='_BLANK' >PublicSpaceApp</a>."
+                                     . "<br><br>Thanks for the interest!"
+                                     . "<br><br><b>PublicSpaceApp Team.</b>";
+                            $mail=Yii::app()->Smtpmail;
+                            $mail->SetFrom('publicspaceapp@gmail.com', 'Welcome to PublicSpaceApp!');
+                            $mail->Subject = $email;
+                            $mail->MsgHTML($message);
+                            $mail->AddAddress($email, "");
+                            if(!$mail->Send()) {
+                                echo "Mailer Error: " . $mail->ErrorInfo;
+                            }else {
+                                echo "Message sent!";
+                            }
+
+                            Yii::app()->user->setFlash('success', "The invitation to test PublicSpaceApp has been sent successfully.");
+                            $this->refresh();
+                        
                         }
-                        
-                        //Cancel Save
-                        /*
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-                        
-                        */
+                                                
 		}
 
 		$this->render('create',array(

@@ -5,9 +5,15 @@
         <group>
             <file>file:/var/www/html/cccbapp/protected/views/event/_search.php</file>
             <file>file:/var/www/html/cccbapp/protected/views/event/_form.php</file>
+            <file>file:/var/www/html/cccbapp/protected/controllers/InviteFriendController.php</file>
+            <file>file:/var/www/html/cccbapp/protected/views/layouts/main.php</file>
             <file>file:/var/www/html/cccbapp/protected/models/EventTypes.php</file>
             <file>file:/var/www/html/cccbapp/css/datepicker.css</file>
+            <file>file:/var/www/html/cccbapp/protected/config/main.php</file>
             <file>file:/var/www/html/cccbapp/protected/controllers/EventController.php</file>
+            <file>file:/var/www/html/cccbapp/protected/models/ContactForm.php</file>
+            <file>file:/var/www/html/cccbapp/protected/views/site/contact.php</file>
+            <file>file:/var/www/html/cccbapp/protected/controllers/SiteController.php</file>
             <file>file:/var/www/html/cccbapp/protected/models/RelatedEvents.php</file>
         </group>
     </open-files>

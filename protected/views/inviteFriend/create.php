@@ -16,4 +16,15 @@ $this->menu=array(
 
 <h1>Invite somebody</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<!-- If form success -->
+<?php if(Yii::app()->user->hasFlash('success')): ?>
+
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('success'); ?>
+</div>
+
+<?php else: ?>
+
+    <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+
+<?php endif; ?>

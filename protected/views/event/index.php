@@ -30,7 +30,7 @@ $('.search-form form').submit(function(){
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <br>
-<?php echo CHtml::link('All Results',Yii::app()->request->baseUrl.'/index.php?r=event/index'); ?> 
+<?php echo CHtml::link('All Results',Yii::app()->request->baseUrl.'/index.php/event/index'); ?> 
 <div class="search-form" style="display:none">
 <?php  $this->renderPartial('_search',array(
     'model'=>$model,

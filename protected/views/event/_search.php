@@ -18,12 +18,12 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>100,'placeholder'=>'Type the name of the event')); ?>
 	</div>
     
         <div class="row">
 		<?php echo $form->label($model,'url'); ?>
-		<?php echo $form->textField($model,'url',array('size'=>60,'maxlength'=>250)); ?>
+		<?php echo $form->textField($model,'url',array('size'=>60,'maxlength'=>250,'placeholder'=>'Type the URL')); ?>
 	</div>
 
         <div class="row">
@@ -34,22 +34,22 @@
     
         <div class="row">
 		<?php echo $form->label($model,'date'); ?>
-		<?php echo $form->textField($model,'date'); ?>
+		<?php echo $form->textField($model,'date',array('maxlength'=>19,'placeholder'=>'YYYY-MM-DD hh:mm:ss')); ?>
 	</div>
     
 	<div class="row">
 		<?php echo $form->label($model,'description'); ?>
-		<?php echo $form->textField($model,'description'); ?>
+		<?php echo $form->textArea($model,'description',array('rows' => 6, 'cols' => 50,'maxlength'=>250,'placeholder'=>'Description of the event')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'location'); ?>
-		<?php echo $form->textField($model,'location',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'location',array('size'=>50,'maxlength'=>50,'placeholder'=>'Where is it?')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'address'); ?>
-		<?php echo $form->textField($model,'address',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'address',array('size'=>60,'maxlength'=>200,'placeholder'=>'Direction of the event')); ?>
 	</div>
 
 	<div class="row">
@@ -66,7 +66,7 @@
     
         <div class="row">
 		<?php echo $form->label($model,'suggest_another_event_related'); ?>
-		<?php echo $form->textField($model,'suggest_another_event_related',array('size'=>50,'maxlength'=>250)); ?>
+		<?php echo $form->textField($model,'suggest_another_event_related',array('size'=>50,'maxlength'=>250,'placeholder'=>"Suggestion of event related")); ?>
 	</div>
     
         <div class="row">
@@ -76,12 +76,12 @@
     
         <div class="row">
 		<?php echo $form->label($model,'discipline'); ?>
-		<?php echo $form->textField($model,'discipline',array('size'=>50,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model,'discipline',array('size'=>50,'maxlength'=>100,'placeholder'=>'Discipline of the event')); ?>
 	</div>
     
         <div class="row">
 		<?php echo $form->label($model,'creator_username'); ?>
-		<?php echo $form->textField($model,'creator_username',array('size'=>50,'maxlength'=>150)); ?>
+		<?php echo $form->textField($model,'creator_username',array('size'=>50,'maxlength'=>150,'placeholder'=>'User who created the event')); ?>
 	</div>
     
 	<div class="row buttons">
@@ -91,6 +91,7 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->
+
 <script type="text/javascript">
    //Function for autocomplete cities in Location field.
    function initialize() {
