@@ -49,3 +49,9 @@ if($model->promotor_id){
 		'creator_username',
 	),
 )); ?>
+
+
+<br />
+<img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/7b96b912/detailview/arrow_undo.png">
+<?php echo CHtml::link('Return to event list',Yii::app()->request->baseUrl.'/index.php/event/index'); ?>
+

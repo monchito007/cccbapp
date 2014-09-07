@@ -7,7 +7,7 @@
         
     	<b><?php //echo CHtml::encode($data->getAttributeLabel('id')); ?></b>
 	<?php //echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	
+        
         <b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
 	<?php echo CHtml::encode($data->title); ?>
 	<br />
@@ -67,5 +67,12 @@
         <b><?php echo CHtml::encode($data->getAttributeLabel('creator_username')); ?>:</b>
 	<?php echo CHtml::encode($data->creator_username); ?>
 	<br />
+	
+        <br />
+        <?php echo CHtml::link('View detail',Yii::app()->request->baseUrl.'/index.php/event/'.$data->id); ?>
+        <img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/7b96b912/gridview/view.png">
+        <br />
 
+        
+        
 </div>

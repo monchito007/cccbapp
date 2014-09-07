@@ -254,6 +254,9 @@ class EventController extends Controller
             //remove first comma
             $related_events_list_string = substr($related_events_list_string, 2, strlen($related_events_list_string));
             
+            //Add end point.
+            $related_events_list_string = $related_events_list_string .".";
+            
             return $related_events_list_string;
             
         }
