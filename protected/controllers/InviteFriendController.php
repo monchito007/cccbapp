@@ -76,9 +76,9 @@ class InviteFriendController extends Controller
                             //Get direction email
                             $email = $model->mail;
 
-                            $message = "You have received an invitation to test the new application of Public Space, PublicSpaceApp. "
+                            $message = "You have received an invitation from ".Yii::app()->user->name." to test the new application of Public Space, PublicSpaceApp. "
                                      . "You can access from the following link: "
-                                     . "<br><br><a href='http://54.187.0.176/cccbapp/' target='_BLANK' >PublicSpaceApp</a>."
+                                     . "<br><br><a href='http://www.publicspaceapp.tk' target='_BLANK' >PublicSpaceApp.tk</a>."
                                      . "<br><br>Thanks for the interest!"
                                      . "<br><br><b>PublicSpaceApp Team.</b>";
                             $mail=Yii::app()->Smtpmail;
