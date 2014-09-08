@@ -71,7 +71,12 @@
         <br />
         <?php echo CHtml::link('View detail',Yii::app()->request->baseUrl.'/index.php/event/'.$data->id); ?>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/7b96b912/gridview/view.png">
+        
+        <?php if(Yii::app()->user->name == $data->creator_username): ?>
         <br />
+        <?php echo CHtml::link('Update event',Yii::app()->request->baseUrl.'/index.php/event/update/'.$data->id); ?>
+        <img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/7b96b912/gridview/update.png">
+        <?php endif; ?>
 
         
         

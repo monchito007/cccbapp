@@ -28,9 +28,21 @@ $('.search-form form').submit(function(){
 
 <h1>Events</h1>
 
+<img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/7b96b912/listview/search.png">
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+
+
+<?php if(Yii::app()->user->name != 'Guest'): ?>
+        <br />
+        <img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/7b96b912/listview/event.png">
+        <?php echo CHtml::link('My events created',Yii::app()->request->baseUrl.'/index.php/event/index?Event[creator_username]='.Yii::app()->user->name.'&yt0=Search'); ?>
+<?php endif; ?>
+        
 <br>
-<?php echo CHtml::link('All Results',Yii::app()->request->baseUrl.'/index.php/event/index'); ?> 
+<img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/7b96b912/listview/view_list.png">
+<?php echo CHtml::link('All Results',Yii::app()->request->baseUrl.'/index.php/event/index'); ?>
+
+
 <div class="search-form" style="display:none">
 <?php  $this->renderPartial('_search',array(
     'model'=>$model,
