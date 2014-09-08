@@ -20,7 +20,7 @@
             Yet it is something that needs to be in permanent transformation. 
             And this is a process that should be undertaken collectively. 
             We are therefore looking forward to receiving any proposal that might add a category to it, or remove one, or enrich one with more sub-categories. 
-            Please contribute any ideas you may have <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php?r=site/contact'); ?>.
+            Please contribute any ideas you may have <?php echo CHtml::link('here',Yii::app()->request->baseUrl.'/index.php/site/contact'); ?>.
         </p>
     
 	<p class="note">Fields with <span class="required">*</span> are required.</p>

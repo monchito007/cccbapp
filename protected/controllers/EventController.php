@@ -85,6 +85,51 @@ class EventController extends Controller
             return $datetime;
                 
 	}
+	/**
+	 * @param string json, validate the format and correction, if the format is equals "education, freedom of speech, noise."
+	 */
+	public function validateRelatedEventListJson($RelatedEventListJson)
+	{
+		
+            $firstLetter = substr($RelatedEventListJson, 0, 1); // get first letter of possible json.
+            
+            //If true, get string in next format "education, freedom of speech, noise."
+            if($firstLetter=='"'){
+                
+                //remove first ", and final ."
+                $RelatedEventListJson = substr($RelatedEventListJson, 1, (strlen($RelatedEventListJson)-3));
+                
+                //Create array to save the related events in string format.
+                $ArrayRelatedEvents = array();
+                
+                //Create array to save the ID's.
+                $ArrayRelatedEventsId = array();
+                
+                //Separe related events in array.
+                $ArrayRelatedEvents = explode(", ", $RelatedEventListJson);
+                
+                //Get array of RelatedEvents Table.
+                $model_related_events=RelatedEvents::model()->findAll();
+                
+                //Find occurrence in RelatedEvents model.
+                foreach ($ArrayRelatedEvents as $key => $RelatedEvents) {
+
+                    foreach ($model_related_events as $value) {
+
+                        if($RelatedEvents==$value['related_event']){$ArrayRelatedEventsId[$key] = $value['id'];}
+                        
+                    }
+
+                }
+                
+                //Convert correct array in json format.
+                $RelatedEventListJson = json_encode($ArrayRelatedEventsId);
+                
+            }
+            
+            return $RelatedEventListJson;
+                
+	}
 
 	/**
 	 * Creates a new model.
@@ -132,7 +177,19 @@ class EventController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+                
+                //check that the user is the creator of the event
+            
+                $model_event=Event::model()->findByPk($id);
+                
+                //If the user is not the creator of the event redirect to view event page.
+                if(Yii::app()->user->name != $model_event->creator_username){
+                            
+                    $this->redirect(array('view','id'=>$id));
+                            
+                }
+                
+                $model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -140,8 +197,22 @@ class EventController extends Controller
 		if(isset($_POST['Event']))
 		{
 			$model->attributes=$_POST['Event'];
-			if($model->save())
+                        
+                        //Convert array of related event to JSON and validate the correct format, ej -> ["2","4","8","18"].
+                        $model->related_event_list_json = $this->validateRelatedEventListJson(json_encode($model->related_event_list_json));
+                        
+                        //Change date and time format to insert into the database.
+                        $model->date = $this->changeDateTimeFormat($model->date);
+                        
+                        //Add id of user who created the event.
+                        $model->creator_username = Yii::app()->user->name;
+                        
+                        //promotor_id not take the value ?¿?¿?¿?
+                        $model->promotor_id = $_POST['Event']['promotor_id'];
+                        
+                        if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
+                        
 		}
 
 		$this->render('update',array(
@@ -249,13 +320,15 @@ class EventController extends Controller
 
                 }
                 
-            }
+            
             
             //remove first comma
             $related_events_list_string = substr($related_events_list_string, 2, strlen($related_events_list_string));
             
             //Add end point.
             $related_events_list_string = $related_events_list_string .".";
+            
+            }
             
             return $related_events_list_string;
             

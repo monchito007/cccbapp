@@ -50,6 +50,13 @@ if($model->promotor_id){
 	),
 )); ?>
 
+<?php if(Yii::app()->user->name == $model->creator_username): ?>
+
+<br />
+<img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/7b96b912/gridview/update.png">
+<?php echo CHtml::link('Update event',Yii::app()->request->baseUrl.'/index.php/event/update/'.$model->id); ?>
+
+<?php endif; ?>
 
 <br />
 <img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/7b96b912/detailview/arrow_undo.png">
